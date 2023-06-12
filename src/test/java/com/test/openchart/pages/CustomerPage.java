@@ -1,12 +1,11 @@
 package com.test.openchart.pages;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class CustomerPage {
@@ -62,13 +61,13 @@ public class CustomerPage {
         this.lastName.sendKeys(lastName);
         this.email.sendKeys(email);
         this.phone.sendKeys(phone);
-        BrowersUtils.ScrollWithJS(driver, this.password);
+        BrowserUtils.ScrollWithJS(driver, this.password);
         this.password.sendKeys(password);
         this.confirm.sendKeys(confirm);
            }
            public void custumerCheckbox(String expected,WebDriver driver) throws InterruptedException {
                Actions actions=new Actions(driver);
-               BrowersUtils.ScrollWithJS(driver,newsletter);
+               BrowserUtils.ScrollWithJS(driver,newsletter);
                Thread.sleep(3000);
                if(newsletter.isDisplayed()&& !newsletter.isSelected()){
                    actions.click(newsletter).perform();
@@ -81,12 +80,12 @@ public class CustomerPage {
                }
 
 
-               BrowersUtils.ScrollWithJS(driver,saveButton);
+               BrowserUtils.ScrollWithJS(driver,saveButton);
                Thread.sleep(3000);
              saveButton.click();
              Thread.sleep(3000);
-             BrowersUtils.ScrollWithJS(driver,massageAlert);
-               Assert.assertEquals(BrowersUtils.getText(massageAlert),expected);
+             BrowserUtils.ScrollWithJS(driver,massageAlert);
+               Assert.assertEquals(BrowserUtils.getText(massageAlert),expected);
 
            }
 }

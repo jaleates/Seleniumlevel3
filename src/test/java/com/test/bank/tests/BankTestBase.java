@@ -25,6 +25,7 @@ public class BankTestBase {
 
     @AfterMethod
     public void tearDown(){
+        driver.quit();
 
     }
 }

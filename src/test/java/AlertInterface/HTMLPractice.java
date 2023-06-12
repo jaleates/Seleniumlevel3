@@ -1,8 +1,7 @@
 package AlertInterface;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.checkerframework.checker.signature.qual.DotSeparatedIdentifiersOrPrimitiveType;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +32,7 @@ public class HTMLPractice {
         rightPreview.click();
         Thread.sleep(2000);
         WebElement htmltext= driver.findElement(By.xpath("//div[@class='swal-modal']"));
-        System.out.println(BrowersUtils.getText(htmltext));
+        System.out.println(BrowserUtils.getText(htmltext));
         String actual= htmltext.getText().trim();
         String expected="Something went wrong";
         Assert.assertTrue(actual.contains(expected));

@@ -1,6 +1,6 @@
 package ActionClass;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,7 +34,7 @@ public class HaverOver {
         Actions actions=new Actions(driver);
         for(int i=0;i<alllimages.size();i++){
             actions.moveToElement(alllimages.get(i)).perform();
-            actualenames.add(BrowersUtils.getText(Allname.get(i)));
+            actualenames.add(BrowserUtils.getText(Allname.get(i)));
         }
         Assert.assertEquals(actualenames,expectedNames);
         System.out.println(actualenames);

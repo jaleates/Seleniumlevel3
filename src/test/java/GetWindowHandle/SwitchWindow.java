@@ -1,6 +1,6 @@
 package GetWindowHandle;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +28,7 @@ public class SwitchWindow {
         clickhere.click();
         WebElement title= driver.findElement(By.tagName("h3"));
         title.getText();
-        System.out.println(BrowersUtils.getText(title));
+        System.out.println(BrowserUtils.getText(title));
         System.out.println(driver.getWindowHandle());
         Set<String> allpageIDS=driver.getWindowHandles();
         for(String id:allpageIDS){
@@ -38,7 +38,7 @@ public class SwitchWindow {
             }
         }
         title= driver.findElement(By.tagName("h3"));
-        System.out.println(BrowersUtils.getText(title));
+        System.out.println(BrowserUtils.getText(title));
 
     }
 
@@ -52,7 +52,7 @@ public class SwitchWindow {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.hyrtutorials.com/p/window-handles-practice.html");
         WebElement button2= driver.findElement(By.cssSelector("#newTabBtn"));
-        BrowersUtils.ScrollWithJS(driver,button2);
+        BrowserUtils.ScrollWithJS(driver,button2);
         button2.click();
         WebElement header1=driver.findElement(By.xpath("//h1[@class='post-title entry-title']"));
       //driver.getwindowhadle() will give the first pages id
@@ -66,7 +66,7 @@ public class SwitchWindow {
 
         }
         header1=driver.findElement(By.xpath("//h1[@class='post-title entry-title']"));
-        Assert.assertEquals(BrowersUtils.getText(header1),"AlertsDemo");
+        Assert.assertEquals(BrowserUtils.getText(header1),"AlertsDemo");
         Assert.assertEquals(driver.getTitle(),"AlertsDemo - H Y R Tutorials");
         WebElement clikme = driver.findElement(By.cssSelector("#alertBox"));
         clikme.click();

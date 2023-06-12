@@ -1,6 +1,6 @@
 package com.test.openchart.pages;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,9 +37,9 @@ WebElement closeButton;
 
     }
     public String errormassage(){
-        return BrowersUtils.getText(errorMassage);
+        return BrowserUtils.getText(errorMassage);
     }
     public void validateTitle(WebDriver driver,String expected){
-        Assert.assertEquals(BrowersUtils.getTitlewithJS(driver),expected);
+        Assert.assertEquals(BrowserUtils.getTitlewithJS(driver),expected);
     }
 }

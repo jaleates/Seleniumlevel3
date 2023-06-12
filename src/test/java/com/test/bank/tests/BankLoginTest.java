@@ -10,29 +10,18 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class BankLoginTest {
+public class BankLoginTest extends BankTestBase{
     @Test
     public void validatePageComponents(){
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options=new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver=new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
+
         BankLoginPage bankLoginPage=new BankLoginPage(driver);
         bankLoginPage.LoginPAgeComponentValidation("XYZ Bank");
         bankLoginPage.clickCustomerLogin();
     }
     @Test
     public void validationDepositeFunctionality() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
         BankLoginPage bankLoginPage = new BankLoginPage(driver);
         bankLoginPage.clickManagerButton();
         BankManagerPage bankManagerPage = new BankManagerPage(driver);
@@ -48,13 +37,7 @@ public class BankLoginTest {
     }
     @Test
     public void validationwithinDrawlFunctionality() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
         BankLoginPage bankLoginPage = new BankLoginPage(driver);
         bankLoginPage.clickManagerButton();
         BankManagerPage bankManagerPage = new BankManagerPage(driver);

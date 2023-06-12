@@ -1,6 +1,6 @@
 package FileUpload;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +27,7 @@ public class FileUploadPractice {
         WebElement upload= driver.findElement(By.cssSelector("#file-submit"));
         upload.click();
         WebElement usapng= driver.findElement(By.cssSelector("#uploaded-files"));
-        Assert.assertTrue(BrowersUtils.getText(usapng).contains("usa.png"));
+        Assert.assertTrue(BrowserUtils.getText(usapng).contains("usa.png"));
 
     }
     @Test
@@ -42,7 +42,7 @@ public class FileUploadPractice {
         WebElement chosseButton= driver.findElement(By.cssSelector(".upload_txt"));
         chosseButton.sendKeys("C:\\Users\\atesj\\Desktop\\Java videos\\se.pdf");
         WebElement message= driver.findElement(By.xpath("//span//b[contains(text(),'Select file ')]"));
-        Assert.assertEquals(BrowersUtils.getText(message),"Select file to send(max 196.45 MB)");
+        Assert.assertEquals(BrowserUtils.getText(message),"Select file to send(max 196.45 MB)");
         WebElement checkBox=driver.findElement(By.cssSelector("#terms"));
         if(!checkBox.isSelected()){
             checkBox.click();
@@ -51,7 +51,7 @@ public class FileUploadPractice {
         WebElement submitButton= driver.findElement(By.xpath("//button[@id='submitbutton']"));
         submitButton.click();
         WebElement message2= driver.findElement(By.xpath("//div//h3"));
-        Assert.assertTrue(BrowersUtils.getText(message2).contains("has been successfully uploaded"));
+        Assert.assertTrue(BrowserUtils.getText(message2).contains("has been successfully uploaded"));
 
     }
 }

@@ -1,6 +1,6 @@
 package FrameandIframe;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,21 +26,21 @@ public class nestedFrame {
         driver.switchTo().frame(iframeLeft);
         WebElement left= driver.findElement(By.xpath("//body[contains(text(),'LEFT')]"));
 
-        System.out.println(BrowersUtils.getText(left));
+        System.out.println(BrowserUtils.getText(left));
         driver.switchTo().parentFrame();
 
         driver.switchTo().frame("frame-middle");
         WebElement middle= driver.findElement(By.cssSelector("#content"));
-        System.out.println(BrowersUtils.getText(middle));
+        System.out.println(BrowserUtils.getText(middle));
         driver.switchTo().parentFrame();
         driver.switchTo().frame("frame-right");
         WebElement right=driver.findElement(By.xpath("//body[contains(text(),'RIGHT')]"));
-        System.out.println(BrowersUtils.getText(right));
+        System.out.println(BrowserUtils.getText(right));
 //        driver.switchTo().parentFrame();
 //        driver.switchTo().parentFrame();
         driver.switchTo().defaultContent();// this will take youto the main html
         driver.switchTo().frame("frame-bottom");
         WebElement buttom=driver.findElement(By.xpath("//body[contains(text(),'BOTTOM')]"));
-        System.out.println(BrowersUtils.getText(buttom));
+        System.out.println(BrowserUtils.getText(buttom));
     }
 }

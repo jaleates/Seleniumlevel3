@@ -1,6 +1,6 @@
 package ActionClass;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -29,7 +28,7 @@ public class MovingSlider {
 //        Thread.sleep(2000);
 //        actions.clickAndHold(slider).moveToElement(range).perform();
         String expectedrange="4.5";
-        while(!BrowersUtils.getText(range).equals(expectedrange)){
+        while(!BrowserUtils.getText(range).equals(expectedrange)){
             Thread.sleep(1000);
             slider.sendKeys(Keys.ARROW_RIGHT);
         }

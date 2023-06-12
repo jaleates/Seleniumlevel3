@@ -1,9 +1,7 @@
 package AlertInterface;
 
-import Utils.BrowersUtils;
-import com.beust.ah.A;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.checkerframework.checker.signature.qual.DotSeparatedIdentifiersOrPrimitiveType;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +31,7 @@ public class Alertintro {
         Assert.assertEquals(actual,expcet);
         alert.accept();
         WebElement result= driver.findElement(By.cssSelector("#result"));
-        Assert.assertEquals(BrowersUtils.getText(result),"You successfully clicked an alert");
+        Assert.assertEquals(BrowserUtils.getText(result),"You successfully clicked an alert");
 
     }
     @Test
@@ -50,7 +48,7 @@ public class Alertintro {
         Alert alert=driver.switchTo().alert();
         alert.dismiss();
         WebElement message= driver.findElement(By.cssSelector("#result"));
-        Assert.assertEquals(BrowersUtils.getText(message),"You clicked: Cancel");
+        Assert.assertEquals(BrowserUtils.getText(message),"You clicked: Cancel");
 
     }
 
@@ -72,7 +70,7 @@ public class Alertintro {
         alert.sendKeys("I am JS pop Up");
         alert.accept();
         WebElement message=driver.findElement(By.cssSelector("#result"));
-        Assert.assertEquals(BrowersUtils.getText(message),"You entered: I am JS pop Up");
+        Assert.assertEquals(BrowserUtils.getText(message),"You entered: I am JS pop Up");
 
     }
 }

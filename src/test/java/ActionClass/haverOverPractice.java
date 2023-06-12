@@ -1,6 +1,6 @@
 package ActionClass;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -45,7 +45,7 @@ CLUES:DO not forget perform
         Map<String,String> map=new HashMap<>();
 for(int i=0;i<allImages.size();i++){
     actions.moveToElement(allImages.get(i)).perform();
-    map.put(BrowersUtils.getText(allNames.get(i)),BrowersUtils.getText(allPrices.get(i)));
+    map.put(BrowserUtils.getText(allNames.get(i)), BrowserUtils.getText(allPrices.get(i)));
 }
         System.out.println(map+"\n");
 

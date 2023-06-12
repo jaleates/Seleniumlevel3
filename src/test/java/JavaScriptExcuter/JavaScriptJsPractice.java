@@ -1,20 +1,17 @@
 package JavaScriptExcuter;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.checkerframework.checker.signature.qual.DotSeparatedIdentifiersOrPrimitiveType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -79,16 +76,16 @@ findOutCource.click();
 
                 WebElement copyright= driver.findElement(By.xpath("//div[contains(text(),'Copyright ')]"));
 Thread.sleep(2000);
-                BrowersUtils.ScrollWithJS(driver,copyright);
-Assert.assertEquals(BrowersUtils.getText(copyright),"Copyright © 2023");
+                BrowserUtils.ScrollWithJS(driver,copyright);
+Assert.assertEquals(BrowserUtils.getText(copyright),"Copyright © 2023");
                 WebElement apply= driver.findElement(By.linkText("Apply Now"));
 //                BrowersUtils.ScrollWithJS(driver,apply);
-       BrowersUtils.clickWithJS(driver,apply);
-              Assert.assertEquals(  BrowersUtils.getTitlewithJS(driver),"Apply Now");
+       BrowserUtils.clickWithJS(driver,apply);
+              Assert.assertEquals(  BrowserUtils.getTitlewithJS(driver),"Apply Now");
 List<WebElement> Alltext= driver.findElements(By.xpath("//h3[@data-element-id='heading3Normal']"));
 List<String> expected= Arrays.asList("info@techtorialacademy.com","+ 1 (224) 570 91 91","Chicago & Houston");
                 for (int i=0;i<Alltext.size();i++){
-                  Assert.assertEquals(BrowersUtils.getText(Alltext.get(i)), expected.get(i));
+                  Assert.assertEquals(BrowserUtils.getText(Alltext.get(i)), expected.get(i));
                 }
 
             }

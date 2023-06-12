@@ -1,6 +1,6 @@
 package com.test.bank.pages;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,12 +25,12 @@ public class CustomerPage {
     WebElement amount300;
 
     public void customervalidation(String expected) throws InterruptedException {
-        Assert.assertEquals(BrowersUtils.getText(customerBalance),expected);
-        String balance=BrowersUtils.getText(customerBalance);
+        Assert.assertEquals(BrowserUtils.getText(customerBalance),expected);
+        String balance= BrowserUtils.getText(customerBalance);
         int balanceint=Integer.parseInt(balance);
         transactionButton.click();
-        String deposite=BrowersUtils.getText(amount500);
-        String withindrawl=BrowersUtils.getText(amount300);
+        String deposite= BrowserUtils.getText(amount500);
+        String withindrawl= BrowserUtils.getText(amount300);
         Thread.sleep(2000);
 
         int depositeint=Integer.parseInt(deposite);

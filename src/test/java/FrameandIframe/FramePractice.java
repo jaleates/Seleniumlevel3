@@ -1,6 +1,6 @@
 package FrameandIframe;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,13 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.SourceType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Set;
 
 public class FramePractice {
     @Test
@@ -34,7 +32,7 @@ public class FramePractice {
         box.clear();
         box.sendKeys("I love Selenium");
         driver.switchTo().parentFrame();
-        System.out.println(BrowersUtils.getText(header));
+        System.out.println(BrowserUtils.getText(header));
 
         /*
 TASK 1:
@@ -61,44 +59,44 @@ TASK 1:
         Actions actions=new Actions(driver);
         WebElement clickpavilion= driver.findElement(By.linkText("Pavilion"));
 clickpavilion.click();
-BrowersUtils.switchByTitle(driver,"qavalidation");
+BrowserUtils.switchByTitle(driver,"qavalidation");
     WebElement selenium= driver.findElement(By.linkText("Selenium"));
                 actions.moveToElement(selenium).perform();
                 WebElement seleniumPython= driver.findElement(By.linkText("Selenium-Python"));
         actions.click(seleniumPython).perform();
         WebElement hearder= driver.findElement(By.tagName("h1"));
-        Assert.assertEquals(BrowersUtils.getText(hearder),"Selenium-Python Tutorial");
+        Assert.assertEquals(BrowserUtils.getText(hearder),"Selenium-Python Tutorial");
         List<WebElement> linksName=driver.findElements(By.xpath("//p//a"));
         for(int i=0;i< linksName.size();i++){
             System.out.println(linksName.get(i).getText());
 
         }
         System.out.println("=======");
-        BrowersUtils.switchByTitle(driver,"iframes");
+        BrowserUtils.switchByTitle(driver,"iframes");
         driver.switchTo().frame("Frame1");
         WebElement catagpry1=driver.findElement(By.linkText("Category1"));
         catagpry1.click();
-        BrowersUtils.switchByTitle(driver,"SeleniumTesting");
+        BrowserUtils.switchByTitle(driver,"SeleniumTesting");
         WebElement header1=driver.findElement(By.xpath("//h1"));
-        Assert.assertEquals(BrowersUtils.getText(header1),"Category Archives: SeleniumTesting");
+        Assert.assertEquals(BrowserUtils.getText(header1),"Category Archives: SeleniumTesting");
       //  Thread.sleep(3000);
         List<WebElement> allHeadrers=driver.findElements(By.xpath("//h3[@class='entry-title']"));
         for(int i=0;i<allHeadrers.size();i++){
-            System.out.println(BrowersUtils.getText(allHeadrers.get(i)));
+            System.out.println(BrowserUtils.getText(allHeadrers.get(i)));
         }
 
-       BrowersUtils.switchByTitle(driver,"iframes");
+       BrowserUtils.switchByTitle(driver,"iframes");
         driver.switchTo().frame("Frame1");
         WebElement text= driver.findElement(By.cssSelector("#frametext"));
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(BrowersUtils.getText(text));
+        System.out.println(BrowserUtils.getText(text));
         driver.switchTo().parentFrame();
         driver.switchTo().frame("Frame2");
         WebElement Catagory3= driver.findElement(By.linkText("Category3"));
         Catagory3.click();
-        BrowersUtils.switchByTitle(driver,"SoftwareTesting Archives - qavalidation");
+        BrowserUtils.switchByTitle(driver,"SoftwareTesting Archives - qavalidation");
         WebElement header2= driver.findElement(By.xpath("//h1"));
-        System.out.println(BrowersUtils.getText(header2));
+        System.out.println(BrowserUtils.getText(header2));
 
 
 

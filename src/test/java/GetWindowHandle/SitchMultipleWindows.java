@@ -1,7 +1,6 @@
 package GetWindowHandle;
 
-import Utils.BrowersUtils;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -37,12 +36,12 @@ public class SitchMultipleWindows {
             }
         }
         System.out.println(driver.getTitle());
-  BrowersUtils.switchByTitle(driver,"Contact");
+  BrowserUtils.switchByTitle(driver,"Contact");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
-        BrowersUtils.switchByTitle(driver,"Kickstart Your");
+        BrowserUtils.switchByTitle(driver,"Kickstart Your");
         System.out.println(driver.getTitle());
-        BrowersUtils.switchByTitle(driver,"Courses");
+        BrowserUtils.switchByTitle(driver,"Courses");
         System.out.println(driver.getTitle());
 
 
@@ -69,16 +68,16 @@ public class SitchMultipleWindows {
         driver.get("https://www.hyrtutorials.com/p/window-handles-practice.html");
 
         WebElement button4= driver.findElement(By.cssSelector("#newTabsBtn"));
-        BrowersUtils.ScrollWithJS(driver,button4);
+        BrowserUtils.ScrollWithJS(driver,button4);
         button4.click();
-        BrowersUtils.switchByTitle(driver,"Basic Controls" );
+        BrowserUtils.switchByTitle(driver,"Basic Controls" );
         WebElement firstName= driver.findElement(By.xpath("//input[@id='firstName']"));
         firstName.sendKeys("Alex");
         WebElement lastName= driver.findElement(By.xpath("//input[@id='lastName']"));
         lastName.sendKeys("Alex");
 
         WebElement gender=driver.findElement(By.xpath("//input[@id='malerb']"));
-        BrowersUtils.ScrollWithJS(driver,gender);
+        BrowserUtils.ScrollWithJS(driver,gender);
         gender.click();
         WebElement checkbox=driver.findElement(By.xpath("//input[@id='englishchbx']"));
         checkbox.click();
@@ -88,16 +87,16 @@ public class SitchMultipleWindows {
         password.sendKeys("12345");
         Thread.sleep(3000);
         WebElement register=driver.findElement(By.xpath("//button[@id='registerbtn']"));
-      BrowersUtils.ScrollWithJS(driver,register);
+      BrowserUtils.ScrollWithJS(driver,register);
         register.click();
         WebElement massage= driver.findElement(By.xpath("//label[@id='msg']"));
-        Assert.assertEquals(BrowersUtils.getText(massage),"Registration is Successful");
-        BrowersUtils.switchByTitle(driver,"Window Handles");
+        Assert.assertEquals(BrowserUtils.getText(massage),"Registration is Successful");
+        BrowserUtils.switchByTitle(driver,"Window Handles");
         WebElement header= driver.findElement(By.xpath("//h1[@itemprop='name']"));
-        Assert.assertEquals(BrowersUtils.getText(header),"Window Handles Practice");
-        BrowersUtils.switchByTitle(driver,"AlertsDemo");
+        Assert.assertEquals(BrowserUtils.getText(header),"Window Handles Practice");
+        BrowserUtils.switchByTitle(driver,"AlertsDemo");
         WebElement button= driver.findElement(By.xpath("//button[@id='promptBox']"));
-        BrowersUtils.ScrollWithJS(driver,button);
+        BrowserUtils.ScrollWithJS(driver,button);
         button.click();
         driver.quit();
 

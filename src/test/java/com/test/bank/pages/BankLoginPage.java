@@ -1,6 +1,6 @@
 package com.test.bank.pages;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,7 +45,7 @@ public class BankLoginPage {
     @FindBy(xpath = "//span[@ng-show='message']")
     WebElement withMassage;
     public void LoginPAgeComponentValidation(String expectedHeader){
-        Assert.assertEquals(BrowersUtils.getText(header),expectedHeader);
+        Assert.assertEquals(BrowserUtils.getText(header),expectedHeader);
         Assert.assertTrue(customerLogin.isDisplayed()&& customerLogin.isEnabled());
         Assert.assertTrue(customerLogin.isDisplayed()&& customerLogin.isEnabled());
     }
@@ -57,19 +57,19 @@ public class BankLoginPage {
         customerLogin.click();
     }
     public void selectYourName(String attributeValue, String attributeName){
-        BrowersUtils.selectBy(yourName,attributeValue,attributeName);
+        BrowserUtils.selectBy(yourName,attributeValue,attributeName);
         loginButton.submit();
     }
 
     public void validateMassage(String expected){
-        Assert.assertEquals(BrowersUtils.getText(massage),expected);
+        Assert.assertEquals(BrowserUtils.getText(massage),expected);
 
     }
     public void clickDepositeButton(String amountDeposite,String expected){
         depositeButton.click();
         depositeAmount.sendKeys(amountDeposite);
         submitDeposite.submit();
-        Assert.assertEquals(BrowersUtils.getText(successfulMassage),expected);
+        Assert.assertEquals(BrowserUtils.getText(successfulMassage),expected);
 
     }
     public void clickwithDrawl(String withindrawl,String expected) throws InterruptedException {
@@ -79,7 +79,7 @@ public class BankLoginPage {
         Thread.sleep(2000);
         submitWithinDrawl.submit();
         Thread.sleep(2000);
-        Assert.assertEquals(BrowersUtils.getText(withMassage),expected);
+        Assert.assertEquals(BrowserUtils.getText(withMassage),expected);
 
     }
 

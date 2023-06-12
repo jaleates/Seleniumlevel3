@@ -1,6 +1,6 @@
 package AlertInterface;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -29,21 +29,21 @@ public class Practice {
         Assert.assertEquals(alert.getText(),"I am an alert box!");
         alert.accept();
         WebElement message1= driver.findElement(By.cssSelector("#output"));
-        Assert.assertEquals(BrowersUtils.getText(message1),"You selected alert popup");
+        Assert.assertEquals(BrowserUtils.getText(message1),"You selected alert popup");
 
         WebElement confirmbox=driver.findElement(By.cssSelector("#confirmBox"));
         confirmbox.click();
         Assert.assertEquals(alert.getText(),"Press a button!");
         alert.dismiss();
         WebElement message2= driver.findElement(By.cssSelector("#output"));
-        Assert.assertEquals(BrowersUtils.getText(message2),"You pressed Cancel in confirmation popup");
+        Assert.assertEquals(BrowserUtils.getText(message2),"You pressed Cancel in confirmation popup");
 
         WebElement box= driver.findElement(By.cssSelector("#promptBox"));
         box.click();
         alert.sendKeys("Accepted");
         alert.accept();
         WebElement message3= driver.findElement(By.cssSelector("#output"));
-        Assert.assertEquals(BrowersUtils.getText(message3),"You entered text Accepted in propmt popup");
+        Assert.assertEquals(BrowserUtils.getText(message3),"You entered text Accepted in propmt popup");
     }
 
 }

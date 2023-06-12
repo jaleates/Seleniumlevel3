@@ -1,6 +1,6 @@
 package com.test.bank.pages;
 
-import Utils.BrowersUtils;
+import Utils.BrowserUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -66,8 +66,8 @@ WebElement homeButton;
     }
     public void openAccountFunctionality(WebDriver driver,String name, String currency,String expectedMassage){
         openAcountButton.click();
-        BrowersUtils.selectBy(selectCustomer,name,"text");
-        BrowersUtils.selectBy(selectCurrency,currency,"value");
+        BrowserUtils.selectBy(selectCustomer,name,"text");
+        BrowserUtils.selectBy(selectCurrency,currency,"value");
         processButton.click();
         Alert alert=driver.switchTo().alert();
         Assert.assertTrue(alert.getText().contains(expectedMassage));
@@ -81,7 +81,7 @@ WebElement homeButton;
         List<String> expected=Arrays.asList(customername,lastName,postCode);
        Thread.sleep(2000);
        for (int i=0;i<allInformations.size();i++) {
-           Assert.assertEquals(BrowersUtils.getText(allInformations.get(i)), expected.get(i));
+           Assert.assertEquals(BrowserUtils.getText(allInformations.get(i)), expected.get(i));
        }
        homeButton.click();
 
