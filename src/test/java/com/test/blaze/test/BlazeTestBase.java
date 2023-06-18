@@ -27,6 +27,6 @@ public class BlazeTestBase {
             BrowserUtils.getScreenShot(driver,"blazePicture");
         }
 
-        driver.quit();
+        //driver.quit();
     }
 }

@@ -6,22 +6,40 @@ then click testng.xml,then copy this link from that page to here-->
 <suite name="Regression suite">
 
     <test name="Blaze Test">
+        <parameter name="category" value="Laptop"> </parameter>
+        <parameter name="Brand" value="MacBook Pro"> </parameter>
+        <parameter name="expected" value="Product added"> </parameter>
+        <parameter name="key1" value="QA_CartItem_LAptopBrand"> </parameter>
+        <parameter name="key2" value="QA_Blaze_Price"> </parameter>
+        <parameter name="name" value="MacBook Pro"> </parameter>
+        <parameter name="price1" value="$1100 *includes tax"> </parameter>
+       <parameter name="price" value="1100"> </parameter>
+        <parameter name="name1" value="Jale"> </parameter>
+        <parameter name="country" value="USA"> </parameter>
+        <parameter name="city" value="St Louis"> </parameter>
+        <parameter name="card" value="visa"> </parameter>
+        <parameter name="month" value="June"> </parameter>
+        <parameter name="year" value="2023"> </parameter>
+        <parameter name="massage" value="Thank you for your purchase!"> </parameter>
+        <parameter name="url" value="https://www.demoblaze.com/index.html"> </parameter>
+        <parameter name="Product" value="Product added"> </parameter>
+
 
         <classes>
 
-            <class name="com.test.blaze.test.MackBookProTest"></class>
-            <class name="com.test.blaze.test.CartTest"></class>
-            <class name="com.test.blaze.test.OrderTest"></class>
+            <class name="com.test.blaze.test.MackBookProTest"> </class>
+            <class name="com.test.blaze.test.CartTest"> </class>
+            <class name="com.test.blaze.test.OrderTest"> </class>
 
         </classes>
             </test>
-    <test name="Bank tests">
-        <classes>
-            <class name="com.test.bank.tests.BankLoginTest"></class>
-            <class name="com.test.bank.tests.BankManagerTest"></class>
-            <class name="com.test.bank.tests.BankCustomerTest"></class>
-        </classes>
-        
-        
-    </test>
+<!--    <test name="Bank tests">-->
+<!--        <classes>-->
+<!--            <class name="com.test.bank.tests.BankLoginTest"></class>-->
+<!--            <class name="com.test.bank.tests.BankManagerTest"></class>-->
+<!--            <class name="com.test.bank.tests.BankCustomerTest"></class>-->
+<!--        </classes>-->
+<!--        -->
+<!--        -->
+<!--    </test>-->
 </suite>

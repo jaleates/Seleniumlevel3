@@ -1,5 +1,6 @@
 package TestNG;
 
+import Utils.configReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.checkerframework.checker.units.qual.A;
 import org.checkerframework.checker.units.qual.C;
@@ -27,13 +28,15 @@ public class OpenChartTestNGPractice {
         WebDriver driver=new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://demo.opencart.com/admin/");
+        driver.get(configReader.readProperty("QA_url"));
 
         WebElement username= driver.findElement(By.xpath("//input[@id='input-username']"));
-        username.sendKeys("demo");
+        username.sendKeys(configReader.readProperty("QA_openChart_username"));
         WebElement password= driver.findElement(By.xpath("//input[@id='input-password']"));
-        password.sendKeys("demo");
-        WebElement button=driver.findElement(By.xpath("//button[@type='submit']"));
+        password.sendKeys(configReader.readProperty("QA_openChart_password"));
+        WebElement loginButton=driver.findElement(By.xpath("//button[@type='submit']"));
+        loginButton.click();
+        WebElement button=driver.findElement(By.xpath("//button[@class='btn-close']"));
         button.click();
         Thread.sleep(2000);
         Assert.assertEquals(driver.getTitle(),"Dashboard");

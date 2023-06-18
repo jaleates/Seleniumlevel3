@@ -18,7 +18,7 @@ public class MackBookProPage {
     WebElement price;
     @FindBy(css = "#myTabContent")
     WebElement description;
-    @FindBy(xpath = "//a[@onclick='addToCart(15)']")
+    @FindBy(xpath = "//a[@class='btn btn-success btn-lg']")
     WebElement addToCartButton;
 
     public void validation(String Name, String Price, String Information) throws InterruptedException {

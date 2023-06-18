@@ -20,8 +20,8 @@ public class DriverHelper {
     // from this class.
     public static WebDriver getDriver(){
         if(driver==null||((RemoteWebDriver)driver).getSessionId()==null){
-            String browser="chrome";
-            switch(browser){
+           // String browser="chrome";
+            switch(configReader.readProperty("browser")){
                 case"chrome":
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions options=new ChromeOptions();
@@ -39,6 +39,7 @@ public class DriverHelper {
             }
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().deleteAllCookies();
         }
 
 return driver;

@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.Set;
 
 public class BrowserUtils {
+
+
     public static String getText(WebElement element){
         return element.getText().trim();
     }
@@ -72,19 +74,16 @@ public static void switchByTitle(WebDriver driver,String title){
         }
 }
 
-public static void getScreenShot(WebDriver driver, String packageName){
-        File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        String location=System.getProperty("st/test/java"+packageName+"/");
-        try{
-            FileUtils.copyFile(file,new File(location+System.currentTimeMillis()));
+public static void getScreenShot(WebDriver driver, String packageName) {
+    File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    String location = System.getProperty("st/test/java" + packageName + "/");
+    try {
+        FileUtils.copyFile(file, new File(location + System.currentTimeMillis()));
 
-        }catch(IOException e){
-            throw new RuntimeException(e);
-        }
+    } catch (IOException e) {
+        throw new RuntimeException(e);
 
-}
-
+    }
 
 
-
-}
+}}

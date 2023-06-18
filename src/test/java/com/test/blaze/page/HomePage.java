@@ -43,9 +43,9 @@ public class HomePage {
 
 
 
-   public void findLaptopCategory(){
+   public void findLaptopCategory(String lap){
         for ( int i=0;i< categories.size();i++){
-            if(BrowserUtils.getText(categories.get(i)).contains("Laptop")){
+            if(BrowserUtils.getText(categories.get(i)).contains(lap)){
                 categories.get(i).click();
                 break;
             }

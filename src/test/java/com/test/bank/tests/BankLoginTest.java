@@ -6,17 +6,19 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class BankLoginTest extends BankTestBase{
+    @Parameters("ExpectedHeader")
     @Test
-    public void validatePageComponents(){
+    public void validatePageComponents(String expectedHeader){
 
 
         BankLoginPage bankLoginPage=new BankLoginPage(driver);
-        bankLoginPage.LoginPAgeComponentValidation("XYZ Bank");
+        bankLoginPage.LoginPAgeComponentValidation(expectedHeader);
         bankLoginPage.clickCustomerLogin();
     }
     @Test

@@ -15,10 +15,10 @@ public class LapTopPage {
     @FindBy(xpath = "//a[@class='hrefch']")
     List<WebElement> laptopNames;
 
-    public void findMacBookPro() throws InterruptedException {
+    public void findMacBookPro(String brand) throws InterruptedException {
         Thread.sleep(2000);
         for (int i = 0; i < laptopNames.size(); i++) {
-            if (BrowserUtils.getText(laptopNames.get(i)).equals("MacBook Pro")) {
+            if (BrowserUtils.getText(laptopNames.get(i)).equals(brand)) {
                 laptopNames.get(i).click();
                 break;
             }
